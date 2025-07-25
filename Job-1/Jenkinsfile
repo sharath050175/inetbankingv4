@@ -1,25 +1,17 @@
 pipeline{
     agent any
-
     stages{
-        stage("Hello"){
+        stage('Git Checkout'){
             steps{
-                echo "Hello World!"
+                git branch: 'Jenkins', url" https://github.com/sharath050175/inetbankingv4.git
             }
+        }    
+        stage('Build'){
+            steps{
+                echo 'Building the project...'
+            }
+
         }
     }
-    {
-        stage("Hello"){
-            steps{
-                echo "Adding the Stages"
-            }
-        }
-    }
-    {
-        stage("Hello"){
-            steps{
-                echo "Building the Application"
-            }
-        }
-    }
+
 }
