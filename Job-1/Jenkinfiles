@@ -3,15 +3,15 @@ pipeline{
     stages{
         stage('Git Checkout'){
             steps{
-                git branch: 'Jenkins', url" https://github.com/sharath050175/inetbankingv4.git
+                git branch: 'Jenkins',url:'https://github.com/sharath050175/inetbankingv4.git'
             }
-        }    
+        }
+
         stage('Build'){
             steps{
-                echo 'Building the project...'
+                echo 'Building the Project...'
             }
-
         }
-    }
 
+    }
 }
