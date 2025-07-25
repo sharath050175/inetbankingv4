@@ -4,11 +4,10 @@ pipeline{
         maven 'Maven'
         jdk 'Java_11'
     }
-
     stages{
         stage('Git Checkout'){
             steps{
-               git branch: 'main',url:'https://github.com/sharath050175/inetbankingv4.git'
+                git branch: 'main',url:'https://github.com/sharath050175/inetbankingv4.git'
             }
         }
 
@@ -17,7 +16,7 @@ pipeline{
                 sh 'mvn clean'
             }
         }
-
+        
         stage('Maven build'){
             steps{
                 sh 'mvn Build'
@@ -26,3 +25,11 @@ pipeline{
 
     }
 }
+
+
+
+
+
+
+
+
