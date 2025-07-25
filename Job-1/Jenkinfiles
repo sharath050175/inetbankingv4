@@ -1,15 +1,26 @@
 pipeline{
     agent any
+    tools {
+        maven 'Maven'
+        jdk 'Java_11'
+    }
+
     stages{
         stage('Git Checkout'){
             steps{
-                git branch: 'Jenkins',url:'https://github.com/sharath050175/inetbankingv4.git'
+               git branch: 'main',url:'https://github.com/sharath050175/inetbankingv4.git'
             }
         }
 
-        stage('Build'){
+        stage('Maven clean'){
             steps{
-                echo 'Building the Project...'
+                sh 'mvn clean'
+            }
+        }
+
+        stage('Maven build'){
+            steps{
+                sh 'mvn Build'
             }
         }
 
