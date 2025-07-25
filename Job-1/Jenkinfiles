@@ -1,8 +1,8 @@
 pipeline{
     agent any
     tools {
-        maven 'Maven'
-        jdk 'Java_11'
+        maven'Maven'
+        jdk'Java_11'
     }
     stages{
         stage('Git Checkout'){
@@ -10,31 +10,10 @@ pipeline{
                 git branch: 'main',url:'https://github.com/sharath050175/inetbankingv4.git'
             }
         }
-        stage('Compile') {
+        stage('Build') {
             steps {
-                    sh 'mvn compile'
+                    echo "This is build stage"
             }
         }    
-        stage('Maven clean'){
-            steps{
-                sh 'mvn clean'
-            }
-        }
-        
-        stage('Maven build'){
-            steps{
-                sh 'mvn clean install'
-            }
-        }
-    
-
-    }
-}
-
-
-
-
-
-
-
-
+   }    
+}   
